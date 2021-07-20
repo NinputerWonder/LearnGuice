@@ -2,8 +2,10 @@ package org.example;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
+import com.google.inject.multibindings.ClassMapKey;
 import com.google.inject.multibindings.ProvidesIntoMap;
 import com.google.inject.multibindings.ProvidesIntoSet;
+import com.google.inject.multibindings.StringMapKey;
 
 /**
  * Guice module that provides bindings for message and count used in
@@ -22,17 +24,20 @@ class DemoModule extends AbstractModule {
         return "hello world";
     }
 
-    @ProvidesIntoSet
+    @ProvidesIntoMap
+    @StringMapKey("R1")
     static Rule provideRuleImpl1() {
         return new RuleImpl1();
     }
 
-    @ProvidesIntoSet
+    @ProvidesIntoMap
+    @StringMapKey("R2")
     static Rule provideRuleImpl2() {
         return new RuleImpl2();
     }
 
-    @ProvidesIntoSet
+    @ProvidesIntoMap
+    @StringMapKey("R3")
     static Rule provideRuleImpl3() {
         return new RuleImpl3();
     }

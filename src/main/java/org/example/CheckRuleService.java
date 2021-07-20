@@ -1,19 +1,22 @@
 package org.example;
 
 import javax.inject.Inject;
+import java.util.Map;
 import java.util.Set;
 
 class CheckRuleService {
-    private Set<Rule> rules;
+    private Map<String, Rule> rules;
 
     @Inject
-    public CheckRuleService(Set<Rule> rules) {
+    public CheckRuleService(Map<String, Rule> rules) {
         this.rules = rules;
     }
 
     public void check() {
-        for (Rule r : rules) {
-            r.check();
-        }
+        Rule rule = rules.get(RuleType.R1.name());
+        rule.check();
+
+        rule = rules.get(RuleType.R3.name());
+        rule.check();
     }
 }

@@ -24,3 +24,9 @@ class RuleImpl3 implements Rule{
         System.out.println("RuleImpl3 check");
     }
 }
+
+enum RuleType {
+    R1,
+    R2,
+    R3
+}
