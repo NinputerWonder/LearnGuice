@@ -1,6 +1,7 @@
 package org.example;
 
 import javax.inject.Inject;
+import java.util.Set;
 
 class Greeter {
     private final String message;
@@ -22,3 +23,4 @@ class Greeter {
         }
     }
 }
+

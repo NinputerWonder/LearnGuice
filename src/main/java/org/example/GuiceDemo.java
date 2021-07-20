@@ -16,9 +16,14 @@ public class GuiceDemo {
         /*
          * Now that we've got the injector, we can build objects.
          */
-        Greeter greeter = injector.getInstance(Greeter.class);
+//        Greeter greeter = injector.getInstance(Greeter.class);
+//
+//        // Prints "hello world" 3 times to the console.
+//        greeter.sayHello();
 
-        // Prints "hello world" 3 times to the console.
-        greeter.sayHello();
+
+        CheckRuleService checkRuleService = injector.getInstance(CheckRuleService.class);
+        checkRuleService.check();
     }
 }
+
